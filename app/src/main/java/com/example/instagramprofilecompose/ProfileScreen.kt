@@ -23,60 +23,60 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun ProfileScreen() {
     Column(modifier = Modifier.fillMaxSize()) {
-
         TopBar(name = "sagar.avhad.9279")
         Spacer(modifier = Modifier.height(4.dp))
+        ProfileSection()
     }
 }
 
 @Composable
 fun TopBar(
-    name:String,
+    name: String,
     modifier: Modifier = Modifier
 ) {
-Row(
-    modifier = modifier.fillMaxWidth(),
-    horizontalArrangement = Arrangement.SpaceAround,
-    verticalAlignment = Alignment.CenterVertically
-) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceAround,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
 
-    Icon(
-        imageVector = Icons.Default.ArrowBack,
-        contentDescription = "Back",
-        tint = Color.Black,
-        modifier = Modifier.size(24.dp)
-    )
+        Icon(
+            imageVector = Icons.Default.ArrowBack,
+            contentDescription = "Back",
+            tint = Color.Black,
+            modifier = Modifier.size(24.dp)
+        )
 
-    Text(
-        text = name,
-        overflow = TextOverflow.Ellipsis,
-        fontWeight = FontWeight.Bold,
-        fontSize = 20.sp
+        Text(
+            text = name,
+            overflow = TextOverflow.Ellipsis,
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp
 
-    )
+        )
 
-    Icon(
-        painter = painterResource(id = R.drawable.ic_bell),
-        contentDescription = "Notification",
-        tint = Color.Black,
-        modifier = Modifier.size(24.dp)
-    )
+        Icon(
+            painter = painterResource(id = R.drawable.ic_bell),
+            contentDescription = "Notification",
+            tint = Color.Black,
+            modifier = Modifier.size(24.dp)
+        )
 
-    Icon(
-        painter = painterResource(id = R.drawable.ic_dotmenu),
-        contentDescription = "More Menu",
-        tint = Color.Black,
-        modifier = Modifier.size(24.dp)
-    )
-    
-}
-    
+        Icon(
+            painter = painterResource(id = R.drawable.ic_dotmenu),
+            contentDescription = "More Menu",
+            tint = Color.Black,
+            modifier = Modifier.size(20.dp)
+        )
+
+    }
+
 }
 
 @Composable
 fun ProfileSection(
     modifier: Modifier = Modifier
-){
+) {
     Column(modifier = modifier.fillMaxWidth()) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -86,18 +86,23 @@ fun ProfileSection(
         ) {
 
             RoundImage(
-                image = painterResource(id = R.drawable.ic_launcher_background),
-                modifier = Modifier.size(100.dp).weight(3F)
-                )
+                image = painterResource(id = R.drawable.pic),
+                modifier = Modifier
+                    .size(100.dp)
+                    .weight(3F)
+            )
+
+            Spacer(modifier = Modifier.width(16.dp))
+            StatSection(modifier = Modifier.weight(7F))
         }
     }
 }
 
 @Composable
 fun RoundImage(
-    image:Painter,
+    image: Painter,
     modifier: Modifier = Modifier
-){
+) {
     Image(
         painter = image,
         contentDescription = "Profile Pic",
@@ -111,4 +116,40 @@ fun RoundImage(
             .padding(3.dp)
             .clip(CircleShape)
     )
+}
+
+@Composable
+fun StatSection(modifier: Modifier = Modifier) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceAround,
+        modifier = modifier
+    ) {
+
+        ProfileStat(numberText = "333", text = "Posts")
+        ProfileStat(numberText = "786K", text = "Followers")
+        ProfileStat(numberText = "420", text = "Following")
+    }
+}
+
+@Composable
+fun ProfileStat(
+    numberText: String,
+    text: String,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier
+    ) {
+
+        Text(
+            text = numberText,
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp
+        )
+        Spacer(Modifier.height(4.dp))
+        Text(text = text)
+    }
 }
