@@ -52,19 +52,19 @@ fun ProfileScreen() {
         HighlightSection(
             highlights = listOf(
                 ImageWithText(
-                    image = painterResource(id = R.drawable.ic_launcher_background),
+                    image = painterResource(id = R.drawable.youtube),
                     text = "YouTube"
                 ),
                 ImageWithText(
-                    image = painterResource(id = R.drawable.ic_launcher_background),
+                    image = painterResource(id = R.drawable.qna),
                     text = "Q&A"
                 ),
                 ImageWithText(
-                    image = painterResource(id = R.drawable.ic_launcher_background),
+                    image = painterResource(id = R.drawable.discord),
                     text = "Discord"
                 ),
                 ImageWithText(
-                    image = painterResource(id = R.drawable.ic_launcher_background),
+                    image = painterResource(id = R.drawable.telegram),
                     text = "Telegram"
                 )
             ),
@@ -98,8 +98,44 @@ fun ProfileScreen() {
         when (selectedTabIndex) {
             0 -> PostSection(
                 posts = listOf(
+                    painterResource(id = R.drawable.kotlin),
                     painterResource(id = R.drawable.kmm),
                     painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                ),
+                modifier = Modifier.fillMaxWidth()
+            )
+            1 -> PostSection(
+                posts = listOf(
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kotlin),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                ),
+                modifier = Modifier.fillMaxWidth()
+            )
+            2 -> PostSection(
+                posts = listOf(
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kotlin),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kmm),
+                ),
+                modifier = Modifier.fillMaxWidth()
+            )
+            3 -> PostSection(
+                posts = listOf(
+                    painterResource(id = R.drawable.kmm),
+                    painterResource(id = R.drawable.kotlin),
                     painterResource(id = R.drawable.kmm),
                     painterResource(id = R.drawable.kmm),
                     painterResource(id = R.drawable.kmm),
