@@ -100,7 +100,7 @@ fun ProfileSection(
         }
         ProfileDescription(
             displayName = "Sagar Kisan Avhad",
-            description = "I am fond of Carrom and Coding",
+            description = "I am fond of Coding and Carrom",
             url = "https://www.linkedin.com/in/sagar-avhad-a2112468/",
             followedBy = listOf("codinginflow", "android developer"),
             otherCount = 33
